@@ -12,7 +12,7 @@
 
 
     angular.element(document).ready(function() {
-      fetch('/features.json').then(function(response) {
+      fetch('/example/features.json').then(function(response) {
         response.json().then(function(features) {
           featuresConf = features;
           angular.bootstrap(document, ['app']);

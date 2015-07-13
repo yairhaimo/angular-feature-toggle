@@ -2,7 +2,7 @@
   "name": "angular-feature-toggle",
   "version": "0.1.2",
   "description": "feature toggling capabilities for angular",
-  "main": "src/featureToggle.js",
+  "main": "dist/angular-feature-toggle.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

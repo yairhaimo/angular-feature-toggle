@@ -8,18 +8,22 @@
     <a ui-sref="dashboard">DASHBOARD</a>
     <div show-if-feature="admin">
       <a ui-sref="admin">Admin</a>
+      (shown only if admin is enabled)
     </div>
     <ui-view></ui-view>
 
-    <script src="https://code.angularjs.org/1.4.2/angular.js"></script>
-    <script src="//rawgit.com/angular-ui/ui-router/0.2.15/release/angular-ui-router.js"></script>
-    <script src="app.js"></script>
-    <script src="featuresConf.js"></script>
-    <script src="../src/featureToggle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
+    <!--<script src="../dist/angular-feature-toggle.js"></script>-->
+    <script src="../dist/angular-feature-toggle.min.js"></script>
+
+    <script src="components.module.js"></script>
     <script src="dashboard/dashboard.js"></script>
     <script src="NEWdashboard/dashboard.js"></script>
     <script src="admin/admin.js"></script>
+
+    <script src="app.js"></script>
   </body>
 
 </html>

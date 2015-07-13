@@ -1,20 +1,17 @@
 (function() {
   'use strict';
-  var featuresConf;
 
-  angular.module('app', ['ui.router', 'featureToggle', 'app.featuresConf'])
-    .config(function($stateProvider, featureToggleProvider/*, featuresConf*/) {
-        featureToggleProvider.init(featuresConf);
-    })
+  angular.module('app', ['ui.router', 'yh.featureToggle', 'app.components'])
     .run(function($rootScope, featureToggle) {
       $rootScope.featureToggle = featureToggle;
     });
 
 
+    // get config from server and manually bootstrap
     angular.element(document).ready(function() {
       fetch('/example/features.json').then(function(response) {
         response.json().then(function(features) {
-          featuresConf = features;
+          window.angularFeaturesConf = features;
           angular.bootstrap(document, ['app']);
         })
       });

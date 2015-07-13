@@ -1,13 +1,13 @@
-angular.module('app')
+angular.module('app.components')
   .config(function($stateProvider, featureToggleProvider) {
      $stateProvider
      .state('admin', {
           url: '/admin',
           templateUrl: 'admin/admin.html',
           controller: 'AdminController',
-          controllerAs: 'admin'
-        },
-        featureToggleProvider.isEnabled('admin')
+          controllerAs: 'admin',
+          version: '*'
+        }
       );
   })
   .controller('AdminController', function() {

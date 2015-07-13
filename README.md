@@ -136,6 +136,6 @@ angular.element(document).ready(function() {
 ```
 This example uses the new [***fetch***](https://developers.google.com/web/updates/2015/03/introduction-to-fetch?hl=en) API for brevity but you can use any ajax function you wish.
 
-## Limitations
+## Limitations and TODOs
 * Dependency on a global window property - angularFeaturesConf
 * Cannot load feature configuration for a specific user since the feature initialization is done in the config phase

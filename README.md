@@ -139,3 +139,4 @@ This example uses the new [***fetch***](https://developers.google.com/web/update
 ## Limitations and TODOs
 * Dependency on a global window property - angularFeaturesConf
 * Cannot load feature configuration for a specific user since the feature initialization is done in the config phase
+* Reduce library size (uses the entire node-semver library atm, need only a subset of that)

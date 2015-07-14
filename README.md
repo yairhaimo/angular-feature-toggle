@@ -82,8 +82,13 @@ The 'feature' property is optional, if omitted the state name is considered to b
 There are two directives you can use in order to toggle features: **show-if-feature** and **hide-if-feature**.  
 Basically they act as ng-if and the opposite of ng-if. They add/remove elements from the DOM if a feature is enabled or satisfies a certain version.
 ```html
+<!-- will  be shown if the admin feature is enabled -->
 <div show-if-feature="admin">
     This is the admin panel
+</div>
+<!-- will not be shown if the widget feature is enabled -->
+<div hide-if-feature="widgets">
+    Widgets coming soon...
 </div>
 ```
 With a specific version:
@@ -95,10 +100,6 @@ With a specific version:
 <!-- will be shown if the admin feature exists and satisfies the version ~2.0.1 -->
 <div show-if-feature="admin ~2.0.1">
     This is the NEW and improved admin panel
-</div>
-<!-- will not be shown if the widget feature is enabled -->
-<div hide-if-feature="widgets">
-    Widgets coming soon...
 </div>
 ```
 

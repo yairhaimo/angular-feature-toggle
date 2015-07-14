@@ -1,10 +1,14 @@
 {
   "name": "angular-feature-toggle",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "feature toggling capabilities for angular",
   "main": "dist/angular-feature-toggle.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/yairhaimo/angular-feature-toggle.git"
   },
   "keywords": [
     "angular",

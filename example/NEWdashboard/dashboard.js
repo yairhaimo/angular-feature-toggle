@@ -5,9 +5,10 @@ angular.module('app.components')
      $stateProvider
      .state('dashboard', {
           url: '/dashboard',
-          templateUrl: 'NEWdashboard.html',
+          templateUrl: 'NEWdashboard/newDashboard.html',
           controller: 'NewDashboardController',
           controllerAs: 'dashboard',
+          feature: 'dash',
           version: '^1'
         }
       );

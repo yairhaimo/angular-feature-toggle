@@ -50,21 +50,23 @@ angular-feature-toggle detects if ui.router is in use and wraps it with a featur
 You can now define your states this way:
 ```js
    $stateProvider
-     .state('dashboard',
+     .state('master.dashboard',
         {
           url: '/dashboard',
           templateUrl: 'dashboard/dashboard.html',
           controller: 'DashboardController',
           controllerAs: 'dashboard',
+          feature: 'dash', //optional
           version: '^0.5.1'
         }
       )
-      .state('dashboard',
+      .state('master.dashboard',
         {
           url: '/dashboard',
           templateUrl: 'NEWdashboard/newDashboard.html',
           controller: 'NewDashboardController',
           controllerAs: 'dashboard',
+          feature: 'dash', //optional
           version: '^1'
         }
       );
@@ -72,6 +74,7 @@ You can now define your states this way:
 Note that both states have the same name but different version conditions (***^0.5.1*** vs ***^1***).  
 If the version is not satisfied for a specific state definition then that definition will be **ignored**.  
 If more than one version of the same state is satisfied the first one will be defined and a warning message will be logged for the following ones.  
+The 'feature' property is optional, if omitted the state name is considered to be the feature name.  
 **NOTE**: if you omit the version parameter in the state definition then a regular state will be defined.
 
 

@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
   'use strict';
   angular.module('yh.featureToggle', ['semver'])
     .config(initFeatures)
@@ -180,7 +180,7 @@
     }
   }
   hideIfFeature.$inject = ['featureToggle'];
-})();
+})(window.angular);
 
 // semver
 (function() {

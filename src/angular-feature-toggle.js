@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
   'use strict';
   angular.module('yh.featureToggle', ['semver'])
     .config(initFeatures)
@@ -175,7 +175,7 @@
       }
     }
   }
-})();
+})(window.angular);
 
 // semver
 (function() {

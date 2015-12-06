@@ -1,0 +1,6 @@
+# IDEs
+.idea/
+
+# package managers
+bower_components/
+node_modules/

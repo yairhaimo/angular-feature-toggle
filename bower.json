@@ -1,0 +1,26 @@
+{
+  "name": "angular-feature-toggle",
+  "version": "0.1.6",
+  "description": "feature toggling capabilities for angular",
+  "license": "ISC",
+  "main": "./src/angular-feature-toggle.js",
+  "dependencies": {
+    "angular": ">= 1.0.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "dist",
+    "lib",
+    "config",
+    "example",
+    "test",
+    "Gruntfile.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yairhaimo/angular-feature-toggle.git"
+  }
+}

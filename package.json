@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/yairhaimo/angular-feature-toggle.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yairhaimo/angular-feature-toggle.git"
   },
   "keywords": [
     "angular",
@@ -16,5 +16,8 @@
   ],
   "author": "yairhaimo",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.6.9"
+  }
 }

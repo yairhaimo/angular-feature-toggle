@@ -12,6 +12,8 @@ Check out the [example](https://github.com/yairhaimo/angular-feature-toggle/tree
 ## Installation
 ```sh
 npm install angular-feature-toggle --save
+or
+bower install angular-feature-toggle
 ```
 ```js
 angular.module('main.app', ['yh.featureToggle'])

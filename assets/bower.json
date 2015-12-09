@@ -17,10 +17,11 @@
     "config",
     "example",
     "test",
-    "Gruntfile.js"
+    "Gruntfile.js",
+	"grunt"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:yairhaimo/angular-feature-toggle.git"
+    "url": "git@github.com:Mixpo/angular-feature-toggle.git"
   }
 }

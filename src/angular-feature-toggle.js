@@ -2,40 +2,42 @@
  * Create AngularJS semver provider.
  */
 var semver = require('semver');
-(function(semver, angular) {
-  'use strict';
+(function (semver, angular) {
+	'use strict';
 
-  angular
-    .module('semver', [])
-    .provider('semver', [function() {
-      return buildWrapper(semver);
-    }]);
+	angular
+		.module('semver', [])
+		.provider('semver', [function () {
+			return buildWrapper(semver);
+		}]);
 
-  /**
-   * Dynamically builds a semver wrapper object that
-   * meets AngularJS provider requirements.
-   *
-   * @param semver
-   * @returns {{$get: Function}}
-   */
-  function buildWrapper(semver) {
-    var wrapper = {
-      $get: function(){}
-    };
-    for (var key in semver) {
-      wrapper[key] = semver[key];
-    }
-    return wrapper;
-  }
+	/**
+	 * Dynamically builds a semver wrapper object that
+	 * meets AngularJS provider requirements.
+	 *
+	 * @param semver
+	 * @returns {{$get: Function}}
+	 */
+	function buildWrapper(semver) {
+		var wrapper = {
+			$get: function () {
+			}
+		};
+		for (var key in semver) {
+			wrapper[key] = semver[key];
+		}
+		return wrapper;
+	}
 })(semver, window.angular);
+
 
 /**
  * Create AngularJS featureToggle provider.
  */
-(function(window, angular) {
+(function (window, angular) {
   'use strict';
 
-  var ng = angular.module('yh.featureToggle', ['semver']);
+  var ng = angular.module('angularFeatureToggle', ['semver']);
   ng.config(['featureToggleProvider', '$injector', function (featureToggleProvider, $injector) {
     initFeatures(featureToggleProvider);
     overrideUIRouterStateFn($injector, featureToggleProvider);
@@ -44,6 +46,7 @@ var semver = require('semver');
      *
      * @param featureToggleProvider
      */
+    /* @ngInject */
     function initFeatures(featureToggleProvider) {
       if (window.angularFeaturesConf) {
         featureToggleProvider.init(window.angularFeaturesConf);
@@ -59,19 +62,20 @@ var semver = require('semver');
      * @param $injector
      * @param featureToggleProvider
      */
+    /* @ngInject */
     function overrideUIRouterStateFn($injector, featureToggleProvider) {
       try {
         var $stateProvider = $injector.get('$stateProvider');
 
         // the app uses ui.router, configure it
         var oldStateFn = $stateProvider.state;
-        $stateProvider.state = function(name, conf) {
+        $stateProvider.state = function (name, conf) {
           // enable state if feature version is satisfied or undefined
           if ((conf.version === undefined) || (featureToggleProvider.isVersion(conf.feature || name, conf.version))) {
             try {
               return oldStateFn.call($stateProvider, name, conf);
             }
-            catch(e) {
+            catch (e) {
               window.console && window.console.warn('state ' + name + ' is already defined'); // jshint ignore:line
               return $stateProvider;
             }
@@ -81,7 +85,7 @@ var semver = require('semver');
             return $stateProvider;
           }
         };
-      } catch(e) {
+      } catch (e) {
         // the app doesnt use ui.router - silent failure
       }
     }
@@ -96,11 +100,11 @@ var semver = require('semver');
       this.version = version;
     }
 
-    Feature.prototype.isVersion = function(versionToCheck) {
+    Feature.prototype.isVersion = function (versionToCheck) {
       return semver.satisfies(this.version, versionToCheck);
     };
 
-    Feature.prototype.isEnabled = function() {
+    Feature.prototype.isEnabled = function () {
       return semver.satisfies(this.version, '*');
     };
 
@@ -185,16 +189,16 @@ var semver = require('semver');
 
       if (featureToggle.isVersion(featureName, featureVersion)) {
         childScope = scope.$new();
-        $transclude(childScope, function(clone) {
+        $transclude(childScope, function (clone) {
           featureEl = clone;
           element.after(featureEl).remove();
         });
       } else {
-        if(childScope) {
+        if (childScope) {
           childScope.$destroy();
           childScope = null;
         }
-        if(featureEl) {
+        if (featureEl) {
           featureEl.after(element).remove();
           featureEl = null;
         }
@@ -231,17 +235,17 @@ var semver = require('semver');
       }
 
       if (featureToggle.isVersion(featureName, featureVersion)) {
-        if(childScope) {
+        if (childScope) {
           childScope.$destroy();
           childScope = null;
         }
-        if(featureEl) {
+        if (featureEl) {
           featureEl.after(element).remove();
           featureEl = null;
         }
       } else {
         childScope = scope.$new();
-        $transclude(childScope, function(clone) {
+        $transclude(childScope, function (clone) {
           featureEl = clone;
           element.after(featureEl).remove();
         });

@@ -1,6 +1,6 @@
 {
   "name": "angular-feature-toggle",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "description": "feature toggling capabilities for angular",
   "main": "dist/angular-feature-toggle.min.js",
   "scripts": {
@@ -15,6 +15,9 @@
     "feature-toggle"
   ],
   "author": "yairhaimo",
+  "contributors": [{
+    "name": "Hays Clark", "email": "hclark@mixpo.com"
+  }],
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

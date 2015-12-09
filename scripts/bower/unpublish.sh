@@ -22,13 +22,13 @@ function prepare {
 function publish {
   for repo in "${REPOS[@]}"
   do
-    tags=`git ls-remote --tags git@github.com:Mixpo/bower-$repo`
+    tags=`git ls-remote --tags git@github.com:yairhaimo/bower-$repo`
     if [[ $tags =~ "refs/tags/v$VERSION_NUMBER" ]]; then
       echo "-- Creating dummy git repo for bower-$repo with origin remote"
       mkdir $TMP_DIR/bower-$repo
       cd $TMP_DIR/bower-$repo
       git init
-      git remote add origin git@github.com:Mixpo/bower-$repo.git
+      git remote add origin git@github.com:yairhaimo/bower-$repo.git
       git push origin :v$VERSION_NUMBER
       echo "-- Deleting v$VERSION_NUMBER tag from bower-$repo"
       cd $SCRIPT_DIR

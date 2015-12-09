@@ -24,13 +24,13 @@ function prepare() {
 
 function publish() {
   # push the tag deletion to github
-  tags=`git ls-remote --tags git@github.com:Mixpo/angular-feature-toggle`
+  tags=`git ls-remote --tags git@github.com:yairhaimo/angular-feature-toggle`
   if [[ $tags =~ "refs/tags/v$VERSION_NUMBER^" ]]; then
     echo "-- Creating dummy git repo for angular.js with origin remote"
     mkdir $TMP_DIR/empty-angular.js
     cd $TMP_DIR/empty-angular.js
     git init
-    git remote add origin git@github.com:Mixpo/angular-feature-toggle.git
+    git remote add origin git@github.com:yairhaimo/angular-feature-toggle.git
     git push origin ":$TAG_NAME"
   else
     echo "-- Tag v$VERSION_NUMBER does not exist on remote. Moving on"

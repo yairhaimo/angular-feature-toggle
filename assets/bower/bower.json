@@ -1,6 +1,6 @@
 {
   "name": "angular-feature-toggle",
-  "version": "0.1.6",
+  "version": "0.2.1",
   "description": "feature toggling capabilities for angular",
   "license": "ISC",
   "main": "./src/angular-feature-toggle.js",
@@ -22,6 +22,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Mixpo/angular-feature-toggle.git"
+    "url": "git@github.com:yairhaimo/angular-feature-toggle.git"
   }
 }

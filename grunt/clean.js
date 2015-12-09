@@ -3,7 +3,7 @@ module.exports = {
 		files: [{
 			dot: true,
 			src: [
-				'dist',
+				'dist'
 			]
 		}]
 	},

@@ -22,7 +22,7 @@ module.exports = {
 		}, {
 			expand: true,
 			dot: true,
-			cwd: 'assets/',
+			cwd: 'assets/bower/',
 			src: [
 				'**'
 			],

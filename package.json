@@ -1,6 +1,6 @@
 {
   "name": "angular-feature-toggle",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "description": "feature toggling capabilities for angular",
   "main": "dist/angular-feature-toggle.min.js",
   "scripts": {
@@ -8,16 +8,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yairhaimo/angular-feature-toggle.git"
+    "url": "https://github.com/mixpo/angular-feature-toggle.git"
   },
   "keywords": [
     "angular",
     "feature-toggle"
   ],
   "author": "yairhaimo",
+  "contributors": [{
+    "name": "Hays Clark", "email": "hclark@mixpo.com"
+  }],
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.6.9"
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.11.0",
+    "load-grunt-config": "^0.19.1",
+    "load-grunt-tasks": "^3.3.0"
   }
 }

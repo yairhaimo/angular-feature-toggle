@@ -4,3 +4,8 @@
 # package managers
 bower_components/
 node_modules/
+
+# build elements
+.tmp/
+dist/
+build/

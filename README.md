@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/angular-feature-toggle.svg)](http://badge.fury.io/js/angular-feature-toggle)
+[![npm version](https://badge.fury.io/js/angular-feature-toggle.svg)](http://badge.fury.io/js/angular-feature-toggle) [![Greenkeeper badge](https://badges.greenkeeper.io/yairhaimo/angular-feature-toggle.svg)](https://greenkeeper.io/)
 
 # angular-feature-toggle
 
